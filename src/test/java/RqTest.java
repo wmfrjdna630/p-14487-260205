@@ -43,4 +43,15 @@ public class RqTest {
 
     }
 
+    @Test
+    @DisplayName(value = "명령 : 목록?keyword=자바&keywordType=title 일때, rq.getParam(\"keywordType\") -> \"title\"")
+    void t5(){
+
+        Rq rq = new Rq("목록?keyword=자바&keywordType=title");
+        String  rst = rq.getParam("keywordType");
+        assertThat(rst).isEqualTo("title");
+
+    }
+
+
 }
