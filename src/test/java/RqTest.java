@@ -57,7 +57,7 @@ public class RqTest {
     void t6(){
 
         Rq rq = new Rq("목록?page=1");
-        int rst = rq.getParamAsInt("page");
+        int rst = rq.getParamAsInt("page", -1);
         assertThat(rst).isEqualTo(1);
     }
 
@@ -66,7 +66,7 @@ public class RqTest {
     void t7(){
 
         Rq rq = new Rq("목록?page=10");
-        int rst = rq.getParamAsInt("page");
+        int rst = rq.getParamAsInt("page", -1);
         assertThat(rst).isEqualTo(10);
     }
 
