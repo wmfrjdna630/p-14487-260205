@@ -11,7 +11,7 @@ public class Rq {
         return cmd.split("\\?")[0];
     }
 
-    public String getParam(String key) {
+    public String getParam(String key, String defaultValue) {
 
         String params = cmd.split("\\?")[1];
         for(String param : params.split("&")){
@@ -22,11 +22,11 @@ public class Rq {
 
         }
 
-        return "";
+        return defaultValue;
     }
 
     public int getParamAsInt(String key, int defaultValue) {
-        String rst = getParam(key);
+        String rst = getParam(key, "");
         try{
             return Integer.parseInt(rst);
         } catch (NumberFormatException e){
