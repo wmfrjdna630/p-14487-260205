@@ -25,4 +25,10 @@ public class Rq {
         return "";
     }
 
+    public int getParamAsInt(String key) {
+        String rst = getParam(key);
+
+        return Integer.parseInt(rst);
+    }
+
 }
